@@ -1,6 +1,7 @@
+const filename = Deno.args[0]
 const decoder = new TextDecoder('utf-8')
 const encoder = new TextEncoder()
-const raw = await Deno.readFile('data.json')
+const raw = await Deno.readFile(filename)
 const data = JSON.parse(decoder.decode(raw))
 const imageURL = data.url
 const res = await fetch(imageURL);

@@ -1,0 +1,26 @@
+name: Flat
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+  schedule:
+    - cron: '0 12 * * *'
+
+jobs:
+  scheduled:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup deno
+        uses: denolib/setup-deno@v2
+      - name: Check out repo
+        uses: actions/checkout@v2
+      - name: Fetch data
+        uses: githubocto/flat@v1
+        with:
+          http_url: https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY
+
+
+
+

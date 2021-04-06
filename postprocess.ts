@@ -1,14 +1,15 @@
+import { readJSON } from 'https://deno.land/x/flat@0.0.2/mod.ts'
+
+// required: get the data filename as the first argument
 const filename = Deno.args[0]
-const decoder = new TextDecoder('utf-8')
-const encoder = new TextEncoder()
-const raw = await Deno.readFile(filename)
-const data = JSON.parse(decoder.decode(raw))
-console.log(data)
-const imageURL = data.url
-const res = await fetch(imageURL);
-console.log(res)
-const imageBytes = new Uint8Array(await res.arrayBuffer());
-console.log(imageBytes)
-const newFileName = './nasa-image-of-the-day.jpg'
-await Deno.writeFile(newFileName, imageBytes);
+const data = await readJSON(filename) as any // cast as any so we can read any keys from JSON
+
+// Postprocess steps
+const imageURL = data.url // fetch the URL key in the json
+const response = await fetch(imageURL); // fetch an image
+const imageBytes = new Uint8Array(await response.arrayBuffer());
+const newFileName = './nasa-image-of-the-day.jpg' // filename to save the image data
+await Deno.writeFile(newFileName, imageBytes); // create a jpg file with Deno
+
+// IMPORTANT: we have output the new filename as the last log
 console.log(newFileName)

@@ -1,3 +1,5 @@
+// You can test this script locally on your computer by runinng `deno run -A postprocess.ts data.json`
+
 import { readJSON } from 'https://deno.land/x/flat@0.0.2/mod.ts'
 
 // required: get the data filename as the first argument

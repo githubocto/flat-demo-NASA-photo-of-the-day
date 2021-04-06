@@ -21,7 +21,7 @@ jobs:
         with:
           http_url: https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY
       - name: Fetch data
-        uses: githubocto/flat@debug-diffstating
+        uses: githubocto/flat@v1
         with:
           http_url: https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY
           postprocess: 'postprocess.ts'

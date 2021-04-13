@@ -22,7 +22,7 @@ jobs:
           http_url: https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY
       - name: Dump Steps context
         env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
+          GITHUB_CONTEXT: ${{ toJson(steps) }}
         run: |
           echo "$GITHUB_CONTEXT"
       - name: Fetch data

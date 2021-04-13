@@ -20,6 +20,7 @@ jobs:
         uses: githubocto/flat@v1
         with:
           http_url: https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY
+      - run: echo "Steps info $STEPS"
       - name: Fetch data
         uses: githubocto/flat@v1
         with:

@@ -20,7 +20,11 @@ jobs:
         uses: githubocto/flat@v1
         with:
           http_url: https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY
-      - run: echo "Steps info JSON.stringify(${{ steps }})"
+      - name: Dump Steps context
+        env:
+          STEPS_CONTEXT: ${{ toJson(steps) }}
+        run: |
+          echo "$STEPS_CONTEXT"
       - name: Fetch data
         uses: githubocto/flat@v1
         with:

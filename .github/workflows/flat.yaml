@@ -2,8 +2,8 @@ name: Flat
 
 on:
   push:
-    branches:
-      - main
+    paths:
+      - .github/workflows/flat.yml # Only run a new workflow every time this file (flat.yaml) file changes
   workflow_dispatch:
   schedule:
     - cron: '0 8 * * *'
@@ -20,8 +20,8 @@ jobs:
         id: one
         uses: githubocto/flat@v2
         with:
-          http_url: https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY
-          downloaded_filename: nasa-image-of-the-day.jpg
-          postprocess: postprocess.ts
+          http_url: https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY # The data to fetch every day
+          downloaded_filename: data.json # The http_url gets saved and renamed in our repository as data.json
+          postprocess: postprocess.ts # A postprocessing javascript or typescript file written in Deno
 
 

@@ -18,19 +18,10 @@ jobs:
         uses: actions/checkout@v2
       - name: Fetch data
         id: one
-        uses: githubocto/flat@v1
+        uses: githubocto/flat@v2
         with:
           http_url: https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY
-      - name: Fetch data
-        id: two
-        uses: githubocto/flat@v1
-        with:
-          http_url: https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY
-          postprocess: 'postprocess.ts'
-      - name: Dump steps context
-        env:
-          STEPS_CONTEXT: ${{ toJSON(steps) }}
-        run: echo "$STEPS_CONTEXT"
-
+          downloaded_filename: nasa-image-of-the-day.jpg
+          postprocess: postprocess.ts
 
 

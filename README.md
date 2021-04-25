@@ -9,7 +9,7 @@ This repository uses a [Flat Data Action](https://octo.github.com/blog/flat-data
 Using a postprocessing script, Flat grabs the image URL within the JSON data and downloads the image as well.
 
 Inside `.github/workflows/flat.yaml`:
-```ts
+```yaml
 - name: Fetch data
         uses: githubocto/flat@v2
         with:

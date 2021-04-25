@@ -1,1 +1,0 @@
-# flat-demo-NASA-photo-of-the-day

@@ -13,3 +13,7 @@ Using a postprocessing script, Flat grabs the image URL within the JSON data and
 ## Postprocessing
 
 Refer to the [Flat postprocessing library](https://github.com/githubocto/flat-postprocessing) for more helper functions and examples for writing postprocessing scripts.
+
+## License
+
+[MIT](LICENSE)

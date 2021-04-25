@@ -8,6 +8,16 @@ This repository uses a [Flat Data Action](https://octo.github.com/blog/flat-data
 
 Using a postprocessing script, Flat grabs the image URL within the JSON data and downloads the image as well.
 
+Inside .github/workflows/flat.yaml
+```ts
+- name: Fetch data
+        uses: githubocto/flat@v2
+        with:
+          http_url: https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY # The data to fetch every day
+          downloaded_filename: data.json # The http_url gets saved and renamed in our repository as data.json
+          postprocess: postprocess.ts # A postprocessing javascript or typescript file written in Deno
+```
+
 ![](https://raw.githubusercontent.com/githubocto/flat-demo-NASA-photo-of-the-day/readme-assets/diagram.png)
 
 ## Postprocessing

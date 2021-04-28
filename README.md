@@ -16,7 +16,7 @@ Inside `.github/workflows/flat.yaml`:
           postprocess: postprocess.ts # A postprocessing javascript or typescript file written in Deno
 ```
 
-![](https://raw.githubusercontent.com/githubocto/flat-demo-NASA-photo-of-the-day/readme-assets/diagram.png)
+<img src="https://raw.githubusercontent.com/githubocto/flat-demo-NASA-photo-of-the-day/readme-assets/diagram2.png" alt="diagram" width="400"/>
 
 ## Postprocessing
 

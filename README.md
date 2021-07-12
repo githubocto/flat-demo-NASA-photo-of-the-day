@@ -4,7 +4,7 @@ This demo is part of a larger Flat Data project created by [GitHub OCTO](https:/
 
 ## What this demo does
 
-This repository uses a [Flat Data Action](https://octo.github.com/blog/flat-data) to fetch a JSON file with information about [NASA's image of the day](https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY) every day at 8 am UTC. Using a postprocessing script, Flat grabs the image URL within the JSON data and downloads the image as well.
+This repository uses a [Flat Data Action](https://github.com/githubocto/flat) to fetch a JSON file with information about [NASA's image of the day](https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY) every day at 8 am UTC. Using a postprocessing script, Flat grabs the image URL within the JSON data and downloads the image as well.
 
 Inside `.github/workflows/flat.yaml`:
 ```yaml

@@ -9,7 +9,7 @@ This repository uses a [Flat Data Action](https://octo.github.com/blog/flat-data
 Inside `.github/workflows/flat.yaml`:
 ```yaml
 - name: Fetch data
-        uses: githubocto/flat@v2
+        uses: githubocto/flat@v3
         with:
           http_url: https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY # The data to fetch every day
           downloaded_filename: data.json # The http_url gets saved and renamed in our repository as data.json
